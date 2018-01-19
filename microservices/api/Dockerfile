@@ -11,14 +11,7 @@ run php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 run php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 run php composer-setup.php --install-dir=/usr/local/bin
 run php -r "unlink('composer-setup.php');"
-
-WORKDIR /app/src
-
-# Add composer.json
-ADD app/src/composer.json /app/src/composer.json
-
-#install modules
-run rm -rf vendor
+run cd ./app/src/
 RUN php /usr/local/bin/composer.phar install --no-dev
 
 #Add the source code
@@ -29,4 +22,5 @@ ADD app/src /app/src
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 COPY app/conf/ports.conf /etc/apache2/ports.conf
 COPY app/src /var/www/html/
+
 
