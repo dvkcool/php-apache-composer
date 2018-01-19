@@ -22,7 +22,7 @@ RUN php /usr/local/bin/composer.phar install --no-dev
 
 #Add the source code
 ADD app/src /app/src
-ADD app/src/vendor /app/src/vendor
+
 
 # Add default apache listener
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
