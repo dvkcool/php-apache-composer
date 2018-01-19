@@ -17,7 +17,8 @@ WORKDIR /app/src
 # Add composer.json
 ADD app/src/composer.json /app/src/composer.json
 
-#install node modules
+#install modules
+run rm -rf vendor
 RUN php /usr/local/bin/composer.phar install --no-dev
 
 #Add the source code
