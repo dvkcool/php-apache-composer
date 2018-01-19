@@ -9,13 +9,13 @@ run php -r "unlink('composer-setup.php');"
 WORKDIR /app/src
 
 # Add composer.json
-ADD src/composer.json /src/composer.json
+ADD app/src/composer.json /app/src/composer.json
 
 #install node modules
 RUN composer install
 
 #Add the source code
-ADD src /src
+ADD app/src /app/src
 
 # Add default apache listener
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
