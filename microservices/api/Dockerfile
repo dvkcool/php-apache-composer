@@ -1,5 +1,7 @@
 FROM php:7.1.2-apache
 #Install git
+run apt-get update
+run apt-get upgrade
 run apt-get install git
 # Install composer
 run php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
