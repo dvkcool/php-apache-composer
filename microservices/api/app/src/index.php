@@ -1,6 +1,6 @@
 <?php
  
-require_once  '/vendor/autoload.php';
+require_once  '/var/www/html/vendor/autoload.php';
  
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
