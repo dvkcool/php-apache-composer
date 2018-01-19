@@ -19,6 +19,6 @@ RUN php /usr/local/bin/composer.phar install --no-dev
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 COPY app/conf/ports.conf /etc/apache2/ports.conf
 COPY app/src /var/www/html/
-COPY /app/src/vendor /var/www/html/vendor
+
 
 
