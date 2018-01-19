@@ -23,7 +23,7 @@ RUN php /usr/local/bin/composer.phar install --no-dev
 
 #Add the source code
 ADD app/src /app/src
-ADD app/src/vendor /app/src/vendor
+ADD /vendor /app/src/vendor
 
 
 # Add default apache listener
