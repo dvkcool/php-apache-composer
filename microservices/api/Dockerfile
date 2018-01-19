@@ -14,13 +14,13 @@ run php -r "unlink('composer-setup.php');"
 workdir /app/src/
 ADD app/src/composer.json /app/src/composer.json
 RUN php /usr/local/bin/composer.phar install --no-dev
-run cp -r ./vendor /usr/local/lib/php/
+run cp -r ./vendor /var/www/html/vendor
 
 # Add default apache listener
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 COPY app/conf/ports.conf /etc/apache2/ports.conf
 COPY app/src /var/www/html/
-COPY ./vendor /var/www/html/vendor
+
 
 
 
