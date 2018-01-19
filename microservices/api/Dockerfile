@@ -1,10 +1,11 @@
 FROM php:7.1.2-apache
 
 # Install composer
-run  curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+run wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet
+
 
 # Install packages
- run composer install
+ run app/src/composer install
 
 # Add default apache listener
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
