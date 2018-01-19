@@ -6,7 +6,7 @@ run php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60e
 run php composer-setup.php
 run php -r "unlink('composer-setup.php');"
 
-WORKDIR /src
+WORKDIR /app/src
 
 # Add composer.json
 ADD src/composer.json /src/composer.json
