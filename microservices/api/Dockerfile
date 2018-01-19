@@ -1,7 +1,7 @@
 FROM php:7.1.2-apache
 
 # Install composer
- pull composer/composer
+ curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
 # Install packages
  run --rm -v $:/app/src/composer install
