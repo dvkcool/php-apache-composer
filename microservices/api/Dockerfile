@@ -6,9 +6,16 @@ run php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60e
 run php composer-setup.php
 run php -r "unlink('composer-setup.php');"
 
+WORKDIR /src
 
-# Install packages
- run app/src/composer install
+# Add composer.json
+ADD src/composer.json /src/composer.json
+
+#install node modules
+RUN composer install
+
+#Add the source code
+ADD src /src
 
 # Add default apache listener
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
