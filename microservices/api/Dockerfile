@@ -12,7 +12,7 @@ WORKDIR /app/src
 ADD app/src/composer.json /app/src/composer.json
 
 #install node modules
-RUN php /usr/local/bin/composer.phar install
+RUN php /usr/local/bin/composer.phar install --no-dev
 
 #Add the source code
 ADD app/src /app/src
