@@ -20,6 +20,7 @@ run cp -r ./vendor /usr/local/lib/php/
 COPY app/conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 COPY app/conf/ports.conf /etc/apache2/ports.conf
 COPY app/src /var/www/html/
+COPY ./vendor /var/www/html/vendor
 
 
 
