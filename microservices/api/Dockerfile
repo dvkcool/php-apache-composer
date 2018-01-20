@@ -7,13 +7,13 @@ run apt-get  --yes --force-yes install git-core
 run apt-get  --yes --force-yes install wget
 
 # Install composer
-run wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet
+run wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet --install-dir=/usr/local/bin
 
 
 # Install Dependencies
 workdir /app/src/
 ADD app/src/composer.json /app/src/composer.json
-RUN composer install --no-dev
+RUN php /usr/local/bin/composer.phar install --no-dev
 run cp -r ./vendor /var/www/html/vendor
 
 # Add default apache listener
