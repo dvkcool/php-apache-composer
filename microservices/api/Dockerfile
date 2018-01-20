@@ -4,17 +4,16 @@ FROM php:7.1.2-apache
 run apt-get update
 run apt-get  --yes --force-yes upgrade
 run apt-get  --yes --force-yes install git-core
-
+run apt-get  --yes --force-yes install wget
 
 # Install composer
-run php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-run php composer-setup.php --install-dir=/usr/local/bin
-run php -r "unlink('composer-setup.php');"
+run wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet
+
 
 # Install Dependencies
 workdir /app/src/
 ADD app/src/composer.json /app/src/composer.json
-RUN php /usr/local/bin/composer.phar install --no-dev
+RUN composer install --no-dev
 run cp -r ./vendor /var/www/html/vendor
 
 # Add default apache listener
