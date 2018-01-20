@@ -1,8 +1,8 @@
-# hello-php-apache
+# php-apache-composer
 
-This project consists of a basic Hasura project with a simple PHP-Apache app running on it. Once this app is deployed on a Hasura cluster, you will have the app running at `https://api.<cluster-name>.hasura-app.io`
+This project consists of a simple PHP-Apache-composer app running on it. Once this app is deployed on a Hasura cluster, you will have the app running at `https://api.<cluster-name>.hasura-app.io`
 
-This is the right place to start if you are planning to build or want to learn to build an PHP-Apache app with Hasura.
+This is the right place to start if you are planning to build or want to learn to build an PHP-Apache-composer app with Hasura.
 
 ## Sections
 
@@ -19,9 +19,13 @@ This is the right place to start if you are planning to build or want to learn t
 
 This quickstart project comes with the following by default:
 
-1. A basic Hasura project
+1. A basic Hasura project which generates random name, address and text.
 
 2. Two tables `article` and `author` with some dummy data
+
+3. Compser : Dependency Manager for PHP, no need to load depedencies locally. Just specify it in composer.json and use it directly with dependency name in your project.
+
+4. A fzaninotto/faker module which generates random data for you
 
 ## Quickstart
 
@@ -30,14 +34,14 @@ Follow this section to get this project working. Before you begin, ensure you ha
 ### Step 1: Getting the project
 
 ```sh
-$ hasura quickstart hello-php-apache
-$ cd hello-php-apache
+$ hasura quickstart dvk/php-apache-composer
+$ cd php-apache-composer
 ```
 
 The above command does the following:
-1. Creates a new folder in the current working directory called `hello-php-apache`
+1. Creates a new folder in the current working directory called `php-apache-composer`
 2. Creates a new free Hasura cluster for you and sets that cluster as the default cluster for this project
-3. Initializes `hello-php-apache` as a git repository and adds the necessary git remotes.
+3. Initializes `php-apache-composer` as a git repository and adds the necessary git remotes.
 
 ### Step 2: Deploying this project
 
@@ -54,6 +58,11 @@ Once the above commands are executed successfully, head over to `https://api.<cl
 
 ## Adding your existing PHP code
 The PHP microservice[1] sample code is inside the `microservices/api/app` directory. You can copy all your existing PHP code directly inside this directory, and start deploying your own PHP code to Hasura cluster.
+
+## Adding additional dependecy
+Just add the depedency to composer.json inside require, now just use your dependency  in php file with name,without need to load it locally.
+#### Note
+Do not forget to add `require_once  __DIR__ .'/vendor/autoload.php';` in your PHP file to use the dependencies.
 
 ### Step 1: Add your PHP code in the microservices directory
 Copy all your exising PHP source code in `microservices/api/app` directory or replace the `microservices/api/app` directory with your app directory. Ensure that the structure of the directory is coherent with the current structure.
