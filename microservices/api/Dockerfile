@@ -1,8 +1,6 @@
 FROM php:7.1.2-apache
 
 #Install git
-run apt-get update
-run apt-get  --yes --force-yes upgrade
 run apt-get  --yes --force-yes install git-core
 run apt-get  --yes --force-yes install wget
 

@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: asceticism82-hasura
+    namespace: credibly32-hasura
   data: null
-  kubeContext: asceticism82
-  name: asceticism82
+  kubeContext: credibly32
+  name: credibly32
