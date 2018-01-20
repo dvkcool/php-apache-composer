@@ -5,14 +5,14 @@ require_once  __DIR__ .'/vendor/autoload.php';
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
 
-echo "Fake name:";  
+echo "Random name:";  
 // generate data by accessing properties
 echo $faker->name;
 
-echo "<BR> Fake address:";  
+echo "<BR> Random address:";  
 // generate fake address
 echo $faker->address;
  
-echo "<BR> Fake text:";
+echo "<BR> Random text:";
 // generate fake name
 echo $faker->text;
