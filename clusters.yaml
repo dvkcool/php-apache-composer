@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: hasura
+    namespace: asceticism82-hasura
   data: null
   kubeContext: asceticism82
   name: asceticism82
