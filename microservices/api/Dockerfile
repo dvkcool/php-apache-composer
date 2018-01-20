@@ -10,6 +10,8 @@ run apt-get  --yes --force-yes install git-core
 run php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 run php composer-setup.php --install-dir=/usr/local/bin
 run php -r "unlink('composer-setup.php');"
+
+# Install Dependencies
 workdir /app/src/
 ADD app/src/composer.json /app/src/composer.json
 RUN php /usr/local/bin/composer.phar install --no-dev
