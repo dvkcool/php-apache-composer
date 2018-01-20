@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: cheesiness79-hasura
+    namespace: cache57-hasura
   data: null
-  kubeContext: cheesiness79
-  name: cheesiness79
+  kubeContext: cache57
+  name: cache57
