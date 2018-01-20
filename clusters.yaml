@@ -1,7 +1,7 @@
 - alias: hasura
   config:
     configmap: controller-conf
-    namespace: credibly32-hasura
+    namespace: cheesiness79-hasura
   data: null
-  kubeContext: credibly32
-  name: credibly32
+  kubeContext: cheesiness79
+  name: cheesiness79

@@ -1,6 +1,6 @@
-description: A Hasura starter project with a ready to deploy PHP-Apache hello-world
-  web application
+description: A Hasura starter project with a ready to deploy PHP-Apache-composer application
+  which generates Random name, address and text
 keywords: getting-started, php, apache
 media: {}
-name: hello-php-apache
+name: php-apache-composer
 platformVersion: v0.15.3
